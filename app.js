@@ -10,7 +10,7 @@ const tuongLuKim = {
   image:
     "https://static.wikia.nocookie.net/southpark/images/c/cd/City-wok-guy.png",
   occupation: "Owner of City Wok restaurant",
-  Age: "Unknown",
+  age: "Unknown",
   voicedBy: "Trey Parker",
   gender: "Male",
   religion: "Unknown",
@@ -35,12 +35,15 @@ function showCharacter(character) {
   document.querySelector("#character").insertAdjacentHTML("beforeend", myHTML);
   document
     .querySelector("#character div:last-child")
-    .addEventListener("click", showDialog(character));
+    .addEventListener("click", function () {
+      showDialog(character);
+    });
 }
 
 function showDialog(character) {
+  document.querySelector("#dialog-image").src = character.image;
   document.querySelector("#dialog-name").textContent = character.name;
-  document.querySelector("#dialog-nickName").textContent = character.nickName;
+  document.querySelector("#dialog-nickName").textContent = character.nickname;
   document.querySelector("#dialog-occupation").textContent =
     character.occupation;
   document.querySelector("#dialog-age").textContent = character.age;
@@ -60,4 +63,7 @@ function showDialog(character) {
   document.querySelector("dialog").showModal();
 }
 
+showCharacter(tuongLuKim);
+showCharacter(tuongLuKim);
+showCharacter(tuongLuKim);
 showCharacter(tuongLuKim);

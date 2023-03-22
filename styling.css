@@ -1,0 +1,13 @@
+#character {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  background-color: aqua;
+  padding: 2vw;
+  margin: 0;
+}

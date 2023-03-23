@@ -1,9 +1,11 @@
 #character {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
-#header {
+#header,
+h5 {
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
@@ -33,9 +35,45 @@
 p {
   font-weight: bolder;
   font-size: larger;
+  text-align: left;
 }
 
 p span {
   font-weight: 10;
   font-size: smaller;
+}
+
+@media (max-width: 1600px) {
+  #character {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1400px) {
+  #character {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  #character {
+    grid-template-columns: 1fr;
+  }
+}
+
+#character div {
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#header {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+dialog {
+  width: 80vw;
 }

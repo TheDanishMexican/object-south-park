@@ -64,6 +64,7 @@ p span {
   text-align: center;
   border: 1px solid black;
   padding: 10px;
+  background-color: rgba(190, 151, 151, 0.871);
 }
 
 #header {
@@ -76,4 +77,34 @@ footer {
 
 dialog {
   width: 80vw;
+}
+
+#character img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+dialog img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* form {
+  display: grid;
+  grid-template-columns: 1fr;
+} */
+
+form {
+  text-align: center;
+}
+
+form button {
+  width: 10vw;
+}
+
+body {
+  background-image: url("https://www.emmys.com/sites/default/files/styles/slider_images/public/photos-article/south-park-866x780.jpg?itok=5fJpaoX-");
+  background-size: contain;
 }

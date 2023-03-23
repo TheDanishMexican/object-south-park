@@ -2,27 +2,26 @@
 
 window.addEventListener("load", start);
 
-function start() {}
+async function start() {
+  const southParkPerson = await getCharacter(
+    "https://raw.githubusercontent.com/Asbjoernemil/data-assignment/main/data/characters.json"
+  );
+  const southParkParis = await getCharacter(
+    "https://raw.githubusercontent.com/Tunafan/southpark_db/main/South%20Park%20db/data/paris.json"
+  );
+  const southParkTuong = await getCharacter(
+    "https://raw.githubusercontent.com/TheDanishMexican/object-south-park/main/data/app.json"
+  );
+  showCharacter(southParkPerson);
+  showCharacter(southParkParis);
+  showCharacter(southParkTuong);
+}
 
-const tuongLuKim = {
-  name: "Tuong Lu Kim",
-  nickname: "None",
-  image:
-    "https://static.wikia.nocookie.net/southpark/images/c/cd/City-wok-guy.png",
-  occupation: "Owner of City Wok restaurant",
-  age: "Unknown",
-  voicedBy: "Trey Parker",
-  gender: "Male",
-  religion: "Unknown",
-  catchPhrase: "Shitty Wok!",
-  hairColor: "Black",
-  schoolGrade: "N/A",
-  episodes:
-    "S03E01, S05E01, S05E02, S05E03, S05E09, S11E04, S11E13, S13E03, S14E03, S14E09, S15E06, S16E12, S18E05, S22E03, S23E02.",
-  appearances: 15,
-  firstAppearance:
-    " S03E01, Tuong Lu Kim first appeared in the third season of South Park, in the episode 'Rainforest Shmainforest.'",
-};
+async function getCharacter(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
 
 function showCharacter(character) {
   const myHTML = /*html*/ `
@@ -62,16 +61,3 @@ function showDialog(character) {
     character.firstAppearance;
   document.querySelector("dialog").showModal();
 }
-
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);
-showCharacter(tuongLuKim);

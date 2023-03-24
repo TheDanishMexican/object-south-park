@@ -1,19 +1,13 @@
 #character {
-  margin-top: 6vw;
+  margin-top: 75px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
-/* #header,
-h5 {
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: center;
-  background-color: aqua;
-  padding: 2vw;
-  margin: 0;
-} */
+#character div {
+  border-radius: 10px;
+}
 
 #dialog-character {
   display: grid;
@@ -68,13 +62,6 @@ p span {
   background-color: rgba(190, 151, 151, 0.871);
 }
 
-#header {
-  margin-bottom: 10px;
-  position: fixed;
-  width: 90%;
-  align-items: center;
-}
-
 footer {
   margin-top: 10px;
 }
@@ -99,11 +86,6 @@ dialog img {
   object-fit: contain;
 }
 
-/* form {
-  display: grid;
-  grid-template-columns: 1fr;
-} */
-
 form {
   text-align: center;
 }
@@ -114,22 +96,11 @@ form button {
 
 body {
   background-image: url("data/southpark.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
-#header {
+header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #5b7992;
-  height: 60px;
-}
-
-h5 {
   top: 0;
   left: 0;
   width: 100%;

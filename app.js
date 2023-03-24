@@ -3,30 +3,20 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const southParkPerson = await getCharacter(
-    "https://raw.githubusercontent.com/Asbjoernemil/data-assignment/main/data/characters.json"
-  );
-  const southParkParis = await getCharacter(
-    "https://raw.githubusercontent.com/Tunafan/southpark_db/main/South%20Park%20db/data/paris.json"
-  );
-  const southParkTuong = await getCharacter(
-    "https://raw.githubusercontent.com/TheDanishMexican/object-south-park/main/data/app.json"
-  );
-  showCharacter(southParkPerson);
-  showCharacter(southParkParis);
-  showCharacter(southParkTuong);
-  showCharacter(southParkPerson);
-  showCharacter(southParkParis);
-  showCharacter(southParkTuong);
-  showCharacter(southParkPerson);
-  showCharacter(southParkParis);
-  showCharacter(southParkTuong);
+  const southParkPerson = await getCharacter("data/app.json");
+  showCharacters(southParkPerson);
 }
 
 async function getCharacter(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
+}
+
+function showCharacters(data) {
+  data.forEach(function (character) {
+    showCharacter(character);
+  });
 }
 
 function showCharacter(character) {

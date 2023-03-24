@@ -15,6 +15,12 @@ async function start() {
   showCharacter(southParkPerson);
   showCharacter(southParkParis);
   showCharacter(southParkTuong);
+  showCharacter(southParkPerson);
+  showCharacter(southParkParis);
+  showCharacter(southParkTuong);
+  showCharacter(southParkPerson);
+  showCharacter(southParkParis);
+  showCharacter(southParkTuong);
 }
 
 async function getCharacter(url) {

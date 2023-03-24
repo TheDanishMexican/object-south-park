@@ -1,10 +1,11 @@
 #character {
+  margin-top: 6vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
-#header,
+/* #header,
 h5 {
   display: grid;
   grid-template-columns: 1fr;
@@ -12,7 +13,7 @@ h5 {
   background-color: aqua;
   padding: 2vw;
   margin: 0;
-}
+} */
 
 #dialog-character {
   display: grid;
@@ -69,6 +70,9 @@ p span {
 
 #header {
   margin-bottom: 10px;
+  position: fixed;
+  width: 90%;
+  align-items: center;
 }
 
 footer {
@@ -77,6 +81,10 @@ footer {
 
 dialog {
   width: 80vw;
+  background-color: #5b7992;
+
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #character img {
@@ -105,6 +113,29 @@ form button {
 }
 
 body {
-  background-image: url("https://www.emmys.com/sites/default/files/styles/slider_images/public/photos-article/south-park-866x780.jpg?itok=5fJpaoX-");
+  background-image: url("data/southpark.jpg");
   background-size: contain;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b7992;
+  height: 60px;
+}
+
+h5 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b7992;
+  height: 60px;
 }

@@ -4,7 +4,7 @@ window.addEventListener("load", start);
 
 async function start() {
   const southParkPerson = await getCharacter("data/app.json");
-  showCharacters(southParkPerson);
+  showCharacter(southParkPerson);
 }
 
 async function getCharacter(url) {
@@ -20,19 +20,39 @@ function showCharacters(data) {
 }
 
 function showCharacter(character) {
-  const myHTML = /*html*/ `
+  if (character.nickname === null) {
+    const myHTML = /*html*/ `
+     <div><p>Name:<span> ${character.name}</span></p>
+      
+      <p>Occupation:<span> ${character.occupation}</span></p>
+      <img src=${character.image}/>
+      </div>`;
+
+    document
+      .querySelector("#character")
+      .insertAdjacentHTML("beforeend", myHTML);
+    document
+      .querySelector("#character div:last-child")
+      .addEventListener("click", function () {
+        showDialog(character);
+      });
+  } else {
+    let myHTML = /*html*/ `
      <div><p>Name:<span> ${character.name}</span></p>
       <p>Nickname:<span> ${character.nickname}</span></p>
       <p>Occupation:<span> ${character.occupation}</span></p>
       <img src=${character.image}/>
       </div>`;
 
-  document.querySelector("#character").insertAdjacentHTML("beforeend", myHTML);
-  document
-    .querySelector("#character div:last-child")
-    .addEventListener("click", function () {
-      showDialog(character);
-    });
+    document
+      .querySelector("#character")
+      .insertAdjacentHTML("beforeend", myHTML);
+    document
+      .querySelector("#character div:last-child")
+      .addEventListener("click", function () {
+        showDialog(character);
+      });
+  }
 }
 
 function showDialog(character) {

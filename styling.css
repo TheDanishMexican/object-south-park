@@ -96,7 +96,7 @@ form button {
 
 body {
   background-image: url("data/southpark.jpg");
-  background-size: cover;
+  background-size: contain;
 }
 
 header {

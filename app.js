@@ -3,11 +3,11 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const southParkPerson = await getCharacter();
-  showCharacters(southParkPerson);
+  const southParkCharacters = await getAllCharacters();
+  showCharacters(southParkCharacters);
 }
 
-async function getCharacter() {
+async function getAllCharacters() {
   const response = await fetch(
     "https://raw.githubusercontent.com/cederdorff/dat-js/main/05-data/southpark.json"
   );
@@ -15,38 +15,26 @@ async function getCharacter() {
   return data;
 }
 
-function showCharacters(data) {
-  data.forEach(function (character) {
+function showCharacters(southParkCharacters) {
+  southParkCharacters.forEach(function (character) {
     showCharacter(character);
   });
 }
 
 function showCharacter(character) {
-  if (
-    character.nickname === null ||
-    character.nickname === "undefined" ||
-    character.nickname === undefined ||
-    character.nickname === "Unknown" ||
-    character.nickname === "None"
-  ) {
-    hasNickname(character);
-  } else {
-    let myHTML = /*html*/ `
+  let myHTML = /*html*/ `
      <div><p>Name:<span> ${character.name}</span></p>
       <p>Nickname:<span> ${character.nickname}</span></p>
       <p>Occupation:<span> ${character.occupation}</span></p>
       <img src=${character.image}/>
       </div>`;
 
-    document
-      .querySelector("#character")
-      .insertAdjacentHTML("beforeend", myHTML);
-    document
-      .querySelector("#character div:last-child")
-      .addEventListener("click", function () {
-        showDialog(character);
-      });
-  }
+  document.querySelector("#character").insertAdjacentHTML("beforeend", myHTML);
+  document
+    .querySelector("#character div:last-child")
+    .addEventListener("click", function () {
+      showDialog(character);
+    });
 }
 
 function showDialog(character) {
@@ -70,19 +58,4 @@ function showDialog(character) {
   document.querySelector("#dialog-firstAppearance").textContent =
     character.firstAppearance;
   document.querySelector("dialog").showModal();
-}
-
-function hasNickname(character) {
-  const myHTML = /*html*/ `
-     <div><p>Name:<span> ${character.name}</span></p>
-      <p>Occupation:<span> ${character.occupation}</span></p>
-      <img src=${character.image}/>
-      </div>`;
-
-  document.querySelector("#character").insertAdjacentHTML("beforeend", myHTML);
-  document
-    .querySelector("#character div:last-child")
-    .addEventListener("click", function () {
-      showDialog(character);
-    });
 }

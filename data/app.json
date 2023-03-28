@@ -3,14 +3,14 @@
   "nickname": null,
   "image": "https://static.wikia.nocookie.net/southpark/images/c/cd/City-wok-guy.png",
   "occupation": "Owner of City Wok restaurant",
-  "age": "Unknown",
+  "age": null,
   "voicedBy": "Trey Parker",
   "gender": "Male",
-  "religion": "Unknown",
+  "religion": null,
   "catchPhrase": "Shitty Wok!",
   "hairColor": "Black",
   "schoolGrade": null,
   "episodes": "S03E01, S05E01, S05E02, S05E03, S05E09, S11E04, S11E13, S13E03, S14E03, S14E09, S15E06, S16E12, S18E05, S22E03, S23E02.",
   "appearances": 15,
-  "firstAppearance": " S03E01, Tuong Lu Kim first appeared in the third season of South Park, in the episode 'Rainforest Shmainforest.'"
+  "firstAppearance": "'Rainforest Shmainforest', S03E01."
 }

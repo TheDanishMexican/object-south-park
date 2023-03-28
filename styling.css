@@ -110,3 +110,7 @@ header {
   background-color: #5b7992;
   height: 60px;
 }
+
+.italics {
+  font-style: italic;
+}

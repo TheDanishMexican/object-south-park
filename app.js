@@ -40,6 +40,8 @@ function showCharacter(character) {
 }
 
 function showDialog(character) {
+  let description = getDescription(character);
+  document.querySelector("#dialog-description").textContent = description;
   document.querySelector("#dialog-image").src = character.image;
   document.querySelector("#dialog-name").textContent = character.name;
   document.querySelector("#dialog-nickName").textContent = character.nickname;
@@ -60,4 +62,19 @@ function showDialog(character) {
   document.querySelector("#dialog-firstAppearance").textContent =
     character.firstAppearance;
   document.querySelector("dialog").showModal();
+}
+
+function getDescription(character) {
+  let text = "";
+
+  if (
+    character.schoolGrade === null ||
+    character.schoolGrade === "undefined" ||
+    character.schoolGrade === "Undefined" ||
+    character.schoolGrade === "" ||
+    character.schoolGrade === "null"
+  ) {
+    text = `${character.name} does not go to school.`;
+  }
+  return text;
 }

@@ -16,9 +16,11 @@ async function getAllCharacters() {
 }
 
 function showCharacters(southParkCharacters) {
-  for (const character of southParkCharacters) {
-    showCharacter(character);
+  for (let index = 0; index < southParkCharacters.length; index++) {
+    showCharacter(southParkCharacters[index]);
   }
+  // for (const character of southParkCharacters) {
+  //   showCharacter(character);
 }
 
 function showCharacter(character) {

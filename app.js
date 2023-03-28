@@ -16,9 +16,9 @@ async function getAllCharacters() {
 }
 
 function showCharacters(southParkCharacters) {
-  southParkCharacters.forEach(function (character) {
+  for (const character of southParkCharacters) {
     showCharacter(character);
-  });
+  }
 }
 
 function showCharacter(character) {

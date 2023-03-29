@@ -24,14 +24,19 @@ function showCharacters(southParkCharacters) {
 }
 
 function showCharacter(character) {
-  let myHTML = /*html*/ `
+  document.querySelector("#character").insertAdjacentHTML(
+    "beforeend",
+    /*html*/ `
      <div><p>Name:<span> ${character.name}</span></p>
-      <p>Nickname:<span> ${character.nickname}</span></p>
+      ${
+        character.nickname
+          ? `<p>Nickname:<span> ${character.nickname}</span></p>`
+          : ""
+      }
       <p>Occupation:<span> ${character.occupation}</span></p>
       <img src=${character.image}/>
-      </div>`;
-
-  document.querySelector("#character").insertAdjacentHTML("beforeend", myHTML);
+      </div>`
+  );
   document
     .querySelector("#character div:last-child")
     .addEventListener("click", function () {
